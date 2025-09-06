@@ -11,19 +11,20 @@ pg.init()
 screenGame = pg.display.set_mode((W, H))
 pg.display.set_caption("Sssnake")
 ts = pg.time.Clock()
-fondo = pg.image.load("grass.png")
-fondo = pg.transform.scale(fondo, (W,H))
+#fondo = pg.image.load("grass.png")
+#fondo = pg.transform.scale(fondo, (W,H))
 snake = Snake()
 game = True
 counter = 0
 food = Food()
 fruit = Boton((randint(0,W),randint(0,H)))
-
+fruit_on = True
 #Game Loop
 while game:
     ts.tick(10)
     fruit_on = True
-    screenGame.blit(fondo,(0,0))
+    screenGame.fill ((1,1,1))
+    # screenGame.blit(fondo,(0,0))
     counter += 10
     for evento in pg.event.get():
         if evento.type == pg.QUIT:  
@@ -38,8 +39,10 @@ while game:
         fruit = Boton((randint(0,W),randint(0,H)))
         
         
-    
-    fruit.show(screenGame)
+    if fruit_on == True:
+        fruit = Boton((randint(0,W),randint(0,H)))
+        
+        fruit.show(screenGame)
     print(snake.pos_x, snake.pos_y,fruit.pos_chx, fruit.pos_chy, counter)
 
 

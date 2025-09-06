@@ -5,7 +5,7 @@ from random import randint
 class Snake():
     def __init__(self):
         self.hp = 1
-        self.ammo = 50
+        
         self.pos_x_i = W//2
         self.pos_y_i = H//2
         self.vy = 0
@@ -30,8 +30,7 @@ class Snake():
         if teclas[pg.K_DOWN] and self.pos_y < H - h_tank: 
             self.vy = 10
             self.vx = 0
-            if self.pos_y > H -h_tank:
-                self.vy = 0
+           
         if teclas[pg.K_LEFT] and self.pos_x >= 0:   
             self.vx = -10
             self.vy = 0
@@ -63,7 +62,7 @@ class Food():
 
 class Boton():
     def __init__(self,pos, w= 100, h= 50):
-        #self.name = name
+        
         self.pos = pos
         self.w = w
         self.h  = h
@@ -75,7 +74,7 @@ class Boton():
         self.pos_chy = [self.pos[1]- 10, self.pos[1]+10]
         self.fruit = pg.transform.scale(self.fruit,(50,70))
     def show(self, screen):
-        #self.title = self.font.render(self.name, True, BLANCO)
+        
         
         self.super.fill((255, 255, 255, 128))
 
