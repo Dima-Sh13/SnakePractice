@@ -35,11 +35,12 @@ while game:
     snake.move()
     #food.draw(screenGame)
     if (snake.pos_x >= fruit.pos_chx[0] and snake.pos_x <= fruit.pos_chx[1]) and (snake.pos_y>= fruit.pos_chy[0] and snake.pos_y <= fruit.pos_chy[1]):
-        fruit = Boton((randint(0,W),randint(0,H)))
+        fruit_on = False
         
         
-    
-    fruit.show(screenGame)
+    if fruit_on == True:
+        ruit = Boton((randint(0,W),randint(0,H)))
+        fruit.show(screenGame)
     print(snake.pos_x, snake.pos_y,fruit.pos_chx, fruit.pos_chy, counter)
 
 
