@@ -61,4 +61,22 @@ class Food():
     def draw(self,screen):
         pg.draw.rect(screen,NEGRO, (self.pos_x, self.pos_y, 20,20))
 
-               
+class Boton():
+    def __init__(self,pos, w= 100, h= 50):
+        #self.name = name
+        self.pos = pos
+        self.w = w
+        self.h  = h
+        self.super = pg.Surface((self.w, self.h), pg.SRCALPHA)
+        self.super.fill((255, 255, 255, 128))
+        self.font = pg.font.SysFont("Pixellari", 50)
+        self.fruit = pg.image.load("fruit.png").convert_alpha()
+        self.pos_chx = [self.pos[0]-10, self.pos[0]+10]
+        self.pos_chy = [self.pos[1]- 10, self.pos[1]+10]
+        self.fruit = pg.transform.scale(self.fruit,(50,70))
+    def show(self, screen):
+        #self.title = self.font.render(self.name, True, BLANCO)
+        
+        self.super.fill((255, 255, 255, 128))
+
+        screen.blit(self.fruit, self.pos)               
