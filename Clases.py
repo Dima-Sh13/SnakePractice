@@ -60,6 +60,10 @@ class Food():
     def draw(self,screen):
         pg.draw.rect(screen,NEGRO, (self.pos_x, self.pos_y, 20,20))
 
+    def growing(self):
+        if self.pos_y == Boton().pos_chy:
+            pass   
+
 class Boton():
     def __init__(self,pos, w= 100, h= 50):
         
@@ -79,3 +83,5 @@ class Boton():
         self.super.fill((255, 255, 255, 128))
 
         screen.blit(self.fruit, self.pos)               
+
+        
